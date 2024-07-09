@@ -30,3 +30,13 @@ class Review(db.Model):
 
     def __str__(self):
         return f"{self.user_name}: {self.review_date:%x}"
+        
+class Userinfo(db.Model):
+    __tablename__ = 'userinfo'
+    id = Column(Integer)
+    usrname = Column(db.String(30))
+    mobilePhoneNum = Column(db.String(11), primary_key=True)
+    userpswd = Column(db.String(20), unique=True)
+
+    def __str__(self):
+        return self.usrname
